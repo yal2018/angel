@@ -1,31 +1,36 @@
-<!DOCTYPE html>
 <html>
 <body>
+You have accessed this page <span id="report"></span> times.
+<p>
+Your last visit was <span id="lastVisitDate"></span>.
 
-<p>Click the button to get your coordinates.</p>
 
-<button onclick="getLocation()">Try It</button>
-
-<p><strong>Note:</strong> The geolocation property is not supported in IE8 and earlier versions.</p>
-
-<p id="demo"></p>
 
 <script>
-var x = document.getElementById("demo");
+var timesVisited = 0;
+var lastVisitDate = 'never';
 
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
+if (localStorage.lastVisit) {
+    var lastVisit = JSON.parse(localStorage.getItem('lastVisit')); 
+    timesVisited = lastVisit.numVisits;
+    lastVisitDate = lastVisit.date; 
 }
 
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
-}
+document.getElementById('lastVisitDate').innerHTML = lastVisitDate;
+
+timesVisited++;
+document.getElementById('report').innerHTML = timesVisited;
+
+var myLastVisit = {};
+myLastVisit.date = new Date();
+myLastVisit.numVisits = timesVisited;
+
+localStorage.lastVisit = JSON.stringify(myLastVisit);
+
 </script>
+
+
+
 
 </body>
 </html>
