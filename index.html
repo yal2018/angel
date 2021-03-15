@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
-<input id="nameInput"></input>
-<p>
-Hello, <span id="nameField">guest</span>.
 
-<script>
+<div class="w3-container w3-teal">
+<h1>Sunset Guararapes-SP</h1>
+<h4>by Geraldo Demazi Jr</h4>
+</div>
 
-function nameHandler(e) {
-  if (e.keyCode == 13) {
-    var nameInput = document.getElementById('nameInput');
-    var nameField = document.getElementById('nameField');
-    nameField.innerHTML = nameInput.value;
-    nameField.style.backgroundColor = 'cyan';
-    nameField.style.textTransform = 'capitalize';
-  }
-}
+<div class="w3-row-padding w3-margin-top">
 
-document.addEventListener('keyup', nameHandler);
+<div class="w3-third">
+<div class="w3-card">
+<img src="guar1.jpeg" style="width:100%">
+<div class="w3-container">
+<h4>Photo 1</h4>
+</div>
+</div>
+</div>
 
-</script>
-
-</body>
-</html>
+<div class="w3-third">
+<div class="w3-card">
+<img src="guar2.jpeg" style="width:100%">
+<div class="w3-container">
+<h4>Photo 2</h4>
+</div>
+</div>
+</div>
