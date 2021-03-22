@@ -6,15 +6,12 @@
 This is my first JavaScript web page.
 <p>
 <script>
-var person = {
-name: ‘John Doe’,
-age: 25,
-isMale: true,
-personality: [‘patient’, ‘loyal’, ‘happy’],
-company: { name: ‘edX’, id: 2984 }
+function tryToChange(x) {
+x = 4;
 }
-console.log(person.age); // 25
-console.log(person[‘company’].id)
+var y = 11;
+tryToChange(y);
+console.log(y); // still 11
 </script>
 </body>
 </html>
