@@ -6,8 +6,13 @@
 This is my first JavaScript web page.
 <p>
 <script>
-var age = 12;
-alert(age);
+var myArray = [‘train’, ‘car’, ‘bike’, ‘scooter’];
+var vehicle = myArray.pop();
+console.log(vehicle); // scooter
+console.log(myArray); // train,car,bike
+vehicle = myArray.shift();
+console.log(vehicle); // train
+console.log(myArray);
 </script>
 </body>
 </html>
