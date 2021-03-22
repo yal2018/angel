@@ -1,15 +1,11 @@
-<!DOCTYPE html>
 <html>
 <body>
-<div id="header">
-PennX at edX Home
+<div>
+The current date/time is <span id="dateTime"> </span>.
 </div>
-<div id="content">
-Welcome to PennX!
-</div>
-<div id="footer">
-<a href="/contact">
-Contact Us!
-</a>
-</div>
+<script>
+var dateTimeField = document.getElementById('dateTime');
+dateTimeField.innerHTML = new Date();
+</script>
+</body>
 </html>
