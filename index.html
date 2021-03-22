@@ -1,19 +1,16 @@
 <html>
 <head><script src="jquery.js"></script></head>
 <body>
-<input id="itemField"></input>
-<p>
 <ul>
-<span id="list"></span>
+<li>dog</li>
+<li>cat</li>
+<li>elephant</li>
+<li>bear</li>
 </ul>
 <script>
-function keyPressHandler(e) {
-if (e.keyCode == 13) {
-$('#list').append('<li>' + $('#itemField').val() + '</li>');
-$('#itemField').val('');
-}
-}
-$('#itemField').keyup(keyPressHandler);
+$('li').click(function() {
+$(this).css('font-weight', 'bold');
+});
 </script>
 </body>
 </html>
