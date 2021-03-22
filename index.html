@@ -1,10 +1,27 @@
-<
-div id="container"></div>
-<
-script type text jsx ''>
-ReactDOM.render(
-<h1>Hello, World!</h1>,
-document.getElementById('container')
+class Counter extends
+React.Component
+constructor(props) {
+super(props);
+this.state
+= { count: 0
+}
+incrementCount
+() { // callback function
+this.setState
+( { count: this.state.count + 1; }
+}
+render() { // invoked when
+setState is called
+return (
+<div> Count: {
+this.state.count
+<button type=
+button
+onClick={
+this.incrementCount.bind (this); }
+Increment
+</button>
+</div>
 );
-<
-</script>
+}
+};
