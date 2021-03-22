@@ -1,21 +1,19 @@
 <html>
 <head><script src="jquery.js"></script></head>
 <body>
-<button id="clickMe">Click Me!</button>
+<input id="itemField"></input>
 <p>
-You've clicked the button <span id="numClicks">0 times</span>.
+<ul>
+<span id="list"></span>
+</ul>
 <script>
-var clicks = 0;
-function clickHandler() {
-clicks++;
-var numClicksSpan = document.getElementById('numClicks');
-if (clicks == 1)
-numClicksSpan.innerHTML = 'once';
-else
-numClicksSpan.innerHTML = clicks + ' times';
+function keyPressHandler(e) {
+if (e.keyCode == 13) {
+$('#list').append('<li>' + $('#itemField').val() + '</li>');
+$('#itemField').val('');
 }
-var button = document.getElementById('clickMe');
-button.addEventListener('click', clickHandler);
+}
+$('#itemField').keyup(keyPressHandler);
 </script>
 </body>
 </html>
