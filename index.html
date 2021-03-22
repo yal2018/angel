@@ -1,15 +1,19 @@
-<div>
-You have visited this page <span id="report"> </span> times.
-</div>
+You have accessed this page <span id="report"></span> times.
+<p>
+Your last visit was <span id="lastVisitDate"></span>.
 <script>
 var timesVisited = 0;
-if (localStorage.timesVisited) {
-timesVisited = parseInt(localStorage.timesVisited);
+var lastVisitDate = 'never';
+if (localStorage.lastVisit) {
+var lastVisit = JSON.parse(localStorage.lastVisit);
+timesVisited = lastVisit.numVisits;
+lastVisitDate = lastVisit.date;
 }
-timesVisited += 1;
-localStorage.setItem('timesVisited', timesVisited);
-var report = document.getElementById('report');
-report.innerHTML = timesVisited;
-if (timesVisited > 10)
-report.style.backgroundColor = 'red';
+document.getElementById('lastVisitDate').innerHTML = lastVisitDate;
+timesVisited++;
+document.getElementById('report').innerHTML = timesVisited;
+var myLastVisit = { }
+myLastVisit.date = new Date();
+myLastVisit.numVisits = timesVisited;
+localStorage.lastVisit = JSON.stringify(myLastVisit);
 </script>
