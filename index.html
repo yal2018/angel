@@ -27,8 +27,42 @@ id='results'>< results'></
 <
 ul
 <script>
-// next slide
----->
+$("input").on( "change input textInput", () =>
+var
+title = $("input[name='title']").val();
+var
+author = $("input[name='author']").val();
+var
+year = $("input[name='year']").val();
+var
+query =
+if
+(title) query += 'title=' + title +
+if
+(author) query += 'name=' + author +
+if
+(year) query += 'year=' + year
+var
+url = 'http://localhost: api /' +
+$
+getJSON url , books, status ) =>
+var
+results = $("#
+results.html
+books.forEach
+( (book) =>
+results.append
+('('< i >' + book.title + i >,
+book.authors.forEach
+( (author) =>
+if
+author.name ) results.append author.name + ',
+}
+results.append
+book.year + '</
+}
+}
+});
 </script>
 </body>
 </html>
