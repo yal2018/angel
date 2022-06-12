@@ -1,53 +1,99 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html>
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
-	<title></title>
-	<meta name="generator" content="LibreOffice 6.1.5.2 (Windows)"/>
-	<meta name="created" content="2021-03-11T19:15:38.754000000"/>
-	<meta name="changed" content="2021-03-11T19:16:36.516000000"/>
-	<style type="text/css">
-		@page { margin: 2cm }
-		p { margin-bottom: 0.25cm; line-height: 115% }
-		pre.cjk { font-family: "NSimSun", monospace }
-	</style>
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS=false; L_NO_TOUCH=false; L_DISABLE_3D=false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.4.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+    <meta name="viewport" content="width=device-width,
+        initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>#map_d6b53edb8829e1845425732dc76f4a11 {
+        position: relative;
+        width: 100.0%;
+        height: 100.0%;
+        left: 0.0%;
+        top: 0.0%;
+        }
+    </style>
 </head>
-<body lang="pt-BR" dir="ltr"><pre class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2"><font color="#000000">&lt;!DOCTYPE html&gt;</font>
-<font color="#000000">&lt;html&gt;</font>
-<font color="#000000">&lt;title&gt;W3.CSS&lt;/title&gt;</font>
-<font color="#000000">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</font>
-<font color="#000000">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://www.w3schools.com/w3css/4/w3.css&quot;&gt;</font>
-<font color="#000000">&lt;body&gt;</font>
-
-<font color="#000000">&lt;div class=&quot;w3-container w3-teal&quot;&gt;</font>
-<font color="#000000">&lt;h1&gt;Análise de Dados&lt;/h1&gt;</font>
-<font color="#000000">&lt;h4&gt;by LRYalmanian&lt;/h4&gt;</font>
-<font color="#000000">&lt;/div&gt;</font>
-
-<font color="#000000">&lt;div class=&quot;w3-row-padding w3-margin-top&quot;&gt;</font>
-
-<font color="#000000">&lt;div class=&quot;w3-third&quot;&gt;</font>
-<font color="#000000">&lt;div class=&quot;w3-card&quot;&gt;</font>
-<font color="#000000">&lt;img src=&quot;NomesBrasil.png&quot; style=&quot;width:50%&quot;&gt;</font>
-<font color="#000000">&lt;div class=&quot;w3-container&quot;&gt;</font>
-<font color="#000000">&lt;h4&gt;Photo 1&lt;/h4&gt;</font>
-<font color="#000000">&lt;/div&gt;</font>
-<font color="#000000">&lt;/div&gt;</font>
-<font color="#000000">&lt;/div&gt;</font>
-
-<font color="#000000">&lt;div class=&quot;w3-third&quot;&gt;</font>
-<font color="#000000">&lt;div class=&quot;w3-card&quot;&gt;</font>
-<font color="#000000">&lt;img src=&quot;Top10Exportacao.png&quot; style=&quot;width:50%&quot;&gt;</font>
-<font color="#000000">&lt;div class=&quot;w3-container&quot;&gt;</font>
-<font color="#000000">&lt;h4&gt;Photo 2&lt;/h4&gt;</font>
-<font color="#000000">&lt;/div&gt;</font>
-<font color="#000000">&lt;/div&gt;</font>
-<font color="#000000">&lt;/div&gt;</font>
-</pre><p>
-<br/>
-<br/>
-<br/>
-
-</p>
+<body>    
+    
+    <div class="folium-map" id="map_d6b53edb8829e1845425732dc76f4a11" ></div>
 </body>
-</html>
+<script>    
+    
+    
+        var bounds = null;
+    
+
+    var map_d6b53edb8829e1845425732dc76f4a11 = L.map(
+        'map_d6b53edb8829e1845425732dc76f4a11', {
+        center: [-5.3584, -70.986],
+        zoom: 14,
+        maxBounds: bounds,
+        layers: [],
+        worldCopyJump: false,
+        crs: L.CRS.EPSG3857,
+        zoomControl: true,
+        });
+
+
+    
+    var tile_layer_7b47638409b0e3a9db181a810d203ca8 = L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+        "attribution": null,
+        "detectRetina": false,
+        "maxNativeZoom": 18,
+        "maxZoom": 18,
+        "minZoom": 0,
+        "noWrap": false,
+        "opacity": 1,
+        "subdomains": "abc",
+        "tms": false
+}).addTo(map_d6b53edb8829e1845425732dc76f4a11);
+    
+        var marker_976287000d8294bbb71534ce5ef4449c = L.marker(
+            [-5.3584, -70.986],
+            {
+                icon: new L.Icon.Default(),
+                }
+            ).addTo(map_d6b53edb8829e1845425732dc76f4a11);
+        
+    
+
+                var icon_14e5a84b22fe812e7ae40d8904937d33 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_976287000d8294bbb71534ce5ef4449c.setIcon(icon_14e5a84b22fe812e7ae40d8904937d33);
+            
+    
+            var popup_c4db48a8e4fbf4542f3c692188b09ac7 = L.popup({maxWidth: '100%'
+            
+            });
+
+            
+                var html_34a4ec69ad19e7072560a9c7cad82ae6 = $(`<div id="html_34a4ec69ad19e7072560a9c7cad82ae6" style="width: 100.0%; height: 100.0%;">Vale do Javari</div>`)[0];
+                popup_c4db48a8e4fbf4542f3c692188b09ac7.setContent(html_34a4ec69ad19e7072560a9c7cad82ae6);
+            
+
+            marker_976287000d8294bbb71534ce5ef4449c.bindPopup(popup_c4db48a8e4fbf4542f3c692188b09ac7)
+            ;
+
+            
+        
+</script>
