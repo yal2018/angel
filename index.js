@@ -1,6 +1,9 @@
-var http = require('http');
-
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.end('Hello World!');
-}).listen(8080);
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>My Website Home Page</title>
+</head>
+<body>
+    <h1>Welcome to my website</h1>
+    <p>Now hosted on GitHub!</p>
+</body>
+</html>
